@@ -10,17 +10,16 @@ public class mod_EditableSign extends BaseMod {
 		Block signWall = (new BlockEditableSign(68, net.minecraft.src.TileEntitySign.class, false)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setBlockName("sign").disableStats().setRequiresSelfNotify();
 		
 		try {
-			ModLoader.setPrivateValue(Block.class, null, "signPost", signPost);
-			ModLoader.setPrivateValue(Block.class, null, "signWall", signWall);
-		} catch (IllegalArgumentException e) {
-			// TODO Auto-generated catch block
+			ModLoader.setPrivateValue(Block.class, null, "aE", signPost);
+			ModLoader.setPrivateValue(Block.class, null, "aJ", signWall);
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (SecurityException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (NoSuchFieldException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			try {
+				ModLoader.setPrivateValue(Block.class, null, "signPost", signPost);
+				ModLoader.setPrivateValue(Block.class, null, "signWall", signWall);
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
 		}
 	}
 
