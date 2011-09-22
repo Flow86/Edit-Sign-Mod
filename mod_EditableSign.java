@@ -24,6 +24,6 @@ public class mod_EditableSign extends BaseMod {
 	}
 
 	public String Version() {
-		return "1.8.1b";
+		return "1.8.1b_2";
 	}
 }

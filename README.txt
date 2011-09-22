@@ -1,7 +1,9 @@
 Editable Signs
 -------------------------------------------------------------------------------
 
-Version 1.8.1
+Current Version 1.8.1b_2
+
+for Minecraft Beta 1.8.1
 
 Depends on: ModLoader
 
@@ -15,7 +17,10 @@ Everything without changing one line of code in the original minecraft.jar
 
 Changelog:
 
-1.8.1 - Initial
+1.8.1b_2 - Fix
+- fixed signPost/signWall Obfuscation
+
+1.8.1b - Initial
 - overwrite BlockSign with BlockEditableSign
 
 -------------------------------------------------------------------------------
