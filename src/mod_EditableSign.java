@@ -1,7 +1,7 @@
 /** 
  * Copyright (C) 2011 Flow86
  * 
- * AdditionalBuildcraftObjects is open-source.
+ * EditableSigns is open-source.
  *
  * It is distributed under the terms of my Open Source License. 
  * It grants rights to read, modify, compile or run the code. 
