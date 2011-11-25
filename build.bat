@@ -1,6 +1,6 @@
 set ESDIR=%CD%
 
-xcopy /Y /E *.java ..\src\minecraft\net\minecraft\src
+xcopy /Y /E src\*.java ..\src\minecraft\net\minecraft\src
 
 cd ..
 cmd /C recompile.bat
