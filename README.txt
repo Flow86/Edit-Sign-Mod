@@ -1,9 +1,9 @@
 Editable Signs
 -------------------------------------------------------------------------------
 
-Current Version 1.8.1b_2
+Current Version 1.2
 
-for Minecraft Beta 1.8.1
+for Minecraft 1.0.0
 
 Depends on: ModLoader
 
@@ -16,6 +16,10 @@ Everything without changing one line of code in the original minecraft.jar
 -----------------------------
 
 Changelog:
+
+1.2 - Update
+- updated for Minecraft 1.0.0
+- added license
 
 1.8.1b_2 - Fix
 - fixed signPost/signWall Obfuscation
