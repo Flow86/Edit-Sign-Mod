@@ -19,6 +19,11 @@ package net.minecraft.src;
 public class mod_EditableSign extends BaseModMp {
 
 	public mod_EditableSign() {
+		BlockEditableSign.initialize();
+	}
+
+	public static String[] getObfuscation() {
+		return new String[] { "aF", "aK" };
 	}
 
 	@Override
