@@ -10,15 +10,21 @@
  * granted by the copyright holder.
  */
 
+/**
+ * 
+ */
 package net.minecraft.src;
 
-public class mod_EditableSign extends BaseMod {
-
-	public mod_EditableSign() {
-	}
-
-	@Override
-	public void load() {
+/**
+ * @author Flow86
+ * 
+ */
+public class BlockEditableSign extends BlockSign {
+	
+	/**
+	 * initializes the mod.
+	 */
+	public static void initialize() {
 		Block.blocksList[63] = null;
 		Block signPost = (new BlockEditableSign(63, net.minecraft.src.TileEntitySign.class, true)).setHardness(1.0F)
 				.setStepSound(Block.soundWoodFootstep).setBlockName("sign").disableStats().setRequiresSelfNotify();
@@ -28,8 +34,8 @@ public class mod_EditableSign extends BaseMod {
 				.setStepSound(Block.soundWoodFootstep).setBlockName("sign").disableStats().setRequiresSelfNotify();
 
 		try {
-			ModLoader.setPrivateValue(Block.class, null, "aD", signPost);
-			ModLoader.setPrivateValue(Block.class, null, "aI", signWall);
+			ModLoader.setPrivateValue(Block.class, null, mod_EditableSign.getObfuscation()[0], signPost);
+			ModLoader.setPrivateValue(Block.class, null, mod_EditableSign.getObfuscation()[1], signWall);
 		} catch (Exception e) {
 			e.printStackTrace();
 			try {
@@ -41,8 +47,16 @@ public class mod_EditableSign extends BaseMod {
 		}
 	}
 
+	protected BlockEditableSign(int i, Class class1, boolean flag) {
+		super(i, class1, flag);
+	}
+	
 	@Override
-	public String getVersion() {
-		return "1.2 (MC 1.0.0)";
+	public boolean blockActivated(World world, int i, int j, int k, EntityPlayer entityplayer) {
+		TileEntitySign tileentitysign = (TileEntitySign) world.getBlockTileEntity(i, j, k);
+		if (tileentitysign != null) {
+			entityplayer.displayGUIEditSign(tileentitysign);
+		}
+		return true;
 	}
 }
