@@ -28,6 +28,6 @@ public class mod_EditableSign extends BaseModMp {
 
 	@Override
 	public String Version() {
-		return "1.3 (MC 1.0.0) MP";
+		return BlockEditableSign.getVersion();
 	}
 }
