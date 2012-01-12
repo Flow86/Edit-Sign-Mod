@@ -24,7 +24,7 @@ public class mod_EditableSign extends BaseMod {
 	public static String[] getObfuscation() {
 		return new String[] { "aD", "aI" };
 	}
-	
+
 	@Override
 	public void load() {
 		BlockEditableSign.initialize();
@@ -33,5 +33,13 @@ public class mod_EditableSign extends BaseMod {
 	@Override
 	public String getVersion() {
 		return BlockEditableSign.getVersion();
+	}
+
+	public static void displayGUIEditSign(World world, int i, int j, int k, EntityPlayer entityplayer) {
+		TileEntitySign tileentitysign = (TileEntitySign) world.getBlockTileEntity(i, j, k);
+		if (tileentitysign != null) {
+			// display GUI
+			entityplayer.displayGUIEditSign(tileentitysign);
+		}
 	}
 }

@@ -30,4 +30,24 @@ public class mod_EditableSign extends BaseModMp {
 	public String Version() {
 		return BlockEditableSign.getVersion();
 	}
+
+	public static void displayGUIEditSign(World world, int i, int j, int k, EntityPlayer entityplayer) {
+		TileEntitySign tileentitysign = (TileEntitySign) world.getBlockTileEntity(i, j, k);
+		if (tileentitysign != null) {
+			
+			// make it editable again (its false if chunk was loaded from NBT)
+			try {
+				ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, "isEditable", true);
+			} catch (IllegalArgumentException e) {
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				e.printStackTrace();
+			} catch (NoSuchFieldException e) {
+				e.printStackTrace();
+			}
+			
+			// display GUI (not necessary on server)
+			// entityplayer.displayGUIEditSign(tileentitysign);
+		}
+	}
 }

@@ -57,10 +57,7 @@ public class BlockEditableSign extends BlockSign {
 
 	@Override
 	public boolean blockActivated(World world, int i, int j, int k, EntityPlayer entityplayer) {
-		TileEntitySign tileentitysign = (TileEntitySign) world.getBlockTileEntity(i, j, k);
-		if (tileentitysign != null) {
-			entityplayer.displayGUIEditSign(tileentitysign);
-		}
+		mod_EditableSign.displayGUIEditSign(world,i, j, k, entityplayer);
 		return true;
 	}
 }
