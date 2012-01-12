@@ -37,13 +37,14 @@ public class mod_EditableSign extends BaseModMp {
 			
 			// make it editable again (its false if chunk was loaded from NBT)
 			try {
-				ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, "isEditable", true);
-			} catch (IllegalArgumentException e) {
-				e.printStackTrace();
-			} catch (SecurityException e) {
-				e.printStackTrace();
-			} catch (NoSuchFieldException e) {
-				e.printStackTrace();
+				ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, "c", true);
+			} catch (Exception e) {
+				//e.printStackTrace();
+				try {
+					ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, "isEditable", true);
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
 			}
 			
 			// display GUI (not necessary on server)

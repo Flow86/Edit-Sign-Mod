@@ -37,7 +37,7 @@ public class BlockEditableSign extends BlockSign {
 			ModLoader.setPrivateValue(Block.class, null, mod_EditableSign.getObfuscation()[0], signPost);
 			ModLoader.setPrivateValue(Block.class, null, mod_EditableSign.getObfuscation()[1], signWall);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			try {
 				ModLoader.setPrivateValue(Block.class, null, "signPost", signPost);
 				ModLoader.setPrivateValue(Block.class, null, "signWall", signWall);
