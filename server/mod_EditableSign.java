@@ -19,7 +19,6 @@ package net.minecraft.src;
 public class mod_EditableSign extends BaseModMp {
 
 	public mod_EditableSign() {
-		BlockEditableSign.initialize();
 	}
 
 	public static String[] getObfuscation() {
@@ -27,7 +26,7 @@ public class mod_EditableSign extends BaseModMp {
 	}
 
 	@Override
-	public String Version() {
+	public String getVersion() {
 		return BlockEditableSign.getVersion();
 	}
 
@@ -50,5 +49,10 @@ public class mod_EditableSign extends BaseModMp {
 			// display GUI (not necessary on server)
 			// entityplayer.displayGUIEditSign(tileentitysign);
 		}
+	}
+
+	@Override
+	public void load() {
+		BlockEditableSign.initialize();
 	}
 }

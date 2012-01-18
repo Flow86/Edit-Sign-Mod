@@ -48,7 +48,7 @@ public class BlockEditableSign extends BlockSign {
 	}
 
 	public static String getVersion() {
-		return "1.3 (MC 1.0.0) MP";
+		return "1.4 (MC 1.1) MP";
 	}
 	
 	protected BlockEditableSign(int i, Class class1, boolean flag) {

@@ -22,7 +22,7 @@ public class mod_EditableSign extends BaseMod {
 	}
 
 	public static String[] getObfuscation() {
-		return new String[] { "aD", "aI" };
+		return new String[] { "aF", "aK" };
 	}
 
 	@Override
