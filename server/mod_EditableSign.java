@@ -22,7 +22,8 @@ public class mod_EditableSign extends BaseModMp {
 	}
 
 	public static String[] getObfuscation() {
-		return new String[] { "aF", "aK" };
+		// signWall, signPost, isEditable
+		return new String[] { "aF", "aK", "c" };
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class mod_EditableSign extends BaseModMp {
 			
 			// make it editable again (its false if chunk was loaded from NBT)
 			try {
-				ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, "c", true);
+				ModLoader.setPrivateValue(TileEntitySign.class, tileentitysign, getObfuscation()[2], true);
 			} catch (Exception e) {
 				//e.printStackTrace();
 				try {

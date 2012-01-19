@@ -22,6 +22,7 @@ public class mod_EditableSign extends BaseMod {
 	}
 
 	public static String[] getObfuscation() {
+		// signWall, signPost
 		return new String[] { "aF", "aK" };
 	}
 
