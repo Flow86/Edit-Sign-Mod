@@ -22,8 +22,8 @@ public class mod_EditableSign extends BaseMod {
 	}
 
 	public static String[] getObfuscation() {
-		// signWall, signPost
-		return new String[] { "aI", "aD" };
+		// signPost, signWall
+		return new String[] { "aD", "aI" };
 	}
 
 	@Override
