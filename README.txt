@@ -3,7 +3,7 @@ Editable Signs
 
 Current Version 1.5
 
-for Minecraft 1.2.3
+for Minecraft 1.1, 1.2.3 and 1.2.4
 
 Depends on: ModLoader
 
@@ -17,13 +17,13 @@ Everything without changing one line of code in the original minecraft.jar
 
 Changelog:
 
-build 40:
+1.5 - Update
 - you can avoid editing the sign while sneaking
 
-build 39:
+build 39
 - updated Minecraft 1.2.4
 
-build 19:
+build 19
 - updated Minecraft 1.2.3
 
 1.4 - Update
