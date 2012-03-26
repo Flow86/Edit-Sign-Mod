@@ -1,9 +1,9 @@
 Editable Signs
 -------------------------------------------------------------------------------
 
-Current Version 1.2
+Current Version 1.5
 
-for Minecraft 1.0.0
+for Minecraft 1.2.3
 
 Depends on: ModLoader
 
@@ -16,6 +16,21 @@ Everything without changing one line of code in the original minecraft.jar
 -----------------------------
 
 Changelog:
+
+build 40:
+- you can avoid editing the sign while sneaking
+
+build 39:
+- updated Minecraft 1.2.4
+
+build 19:
+- updated Minecraft 1.2.3
+
+1.4 - Update
+- updated for Minecraft 1.1
+- using jenkins automatic build from now on
+
+1.3 - Update
 
 1.2 - Update
 - updated for Minecraft 1.0.0
