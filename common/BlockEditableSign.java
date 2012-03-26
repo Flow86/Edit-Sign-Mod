@@ -48,7 +48,7 @@ public class BlockEditableSign extends BlockSign {
 	}
 
 	public static String getVersion() {
-		return "1.4 (MC 1.1) MP";
+		return "1.5 (MC 1.2.4) MP";
 	}
 	
 	protected BlockEditableSign(int i, Class class1, boolean flag) {
@@ -57,6 +57,9 @@ public class BlockEditableSign extends BlockSign {
 
 	@Override
 	public boolean blockActivated(World world, int i, int j, int k, EntityPlayer entityplayer) {
+		if (entityplayer.isSneaking())
+			return false;
+			
 		mod_EditableSign.displayGUIEditSign(world,i, j, k, entityplayer);
 		return true;
 	}
