@@ -21,10 +21,12 @@ Changelog:
 - you can avoid editing the sign while sneaking
 
 build 39
-- updated Minecraft 1.2.4
+- updated to Minecraft 1.2.4
+  obfuscation didn't change, YEAH!
+  but no support for SMP currently (no updated modloader-MP yet)
 
 build 19
-- updated Minecraft 1.2.3
+- updated to Minecraft 1.2.3
 
 1.4 - Update
 - updated for Minecraft 1.1
