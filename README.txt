@@ -3,9 +3,9 @@ Editable Signs
 
 Current Version 1.5
 
-for Minecraft 1.1, 1.2.3 and 1.2.4
+for Minecraft 1.1, 1.2.3, 1.2.4 and 1.2.5
 
-Depends on: ModLoader
+Depends on: ModLoader / ModLoaderMP
 
 -------------------------------------------------------------------------------
 
