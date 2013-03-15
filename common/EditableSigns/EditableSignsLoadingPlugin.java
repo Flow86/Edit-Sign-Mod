@@ -38,7 +38,7 @@ public class EditableSignsLoadingPlugin implements IFMLLoadingPlugin, IFMLCallHo
 
 	@Override
 	public String getSetupClass() {
-		return null;
+		return "EditableSigns.EditableSignsLoadingPlugin";
 	}
 
 	@Override
