@@ -1,11 +1,20 @@
 @ECHO OFF
 
-rsync -arv --existing ../src/minecraft/net/minecraft/src/ ./client/
-rsync -arv --existing ../src/minecraft/net/minecraft/src/ ./common/
+set CYGWIN=nontsec
 
-pause
+IF EXIST ..\build\forge\mcp\src\minecraft (
+	echo Syncing Client
+	REM rsync -arv --existing ../build/forge/mcp/src/minecraft/ client/
+	rsync -arv --existing ../build/forge/mcp/src/minecraft/ common/
+	rsync -arv --existing ../build/forge/mcp/src/minecraft/lang/ resources/lang/
+)
 
-rsync -arv --existing ../src/minecraft_server/net/minecraft/src/ ./server/
-rsync -arv --existing ../src/minecraft_server/net/minecraft/src/ ./common/
+IF EXIST ..\build\forge\mcp\src\minecraft_server (
+	PAUSE
+
+	echo Syncing Server
+	rsync -arv --existing ../build/forge/mcp/src/minecraft_server/ server/
+	rsync -arv --existing ../build/forge/mcp/src/minecraft_server/ common/
+)
 
 PAUSE
