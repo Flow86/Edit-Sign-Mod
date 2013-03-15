@@ -198,7 +198,7 @@
 
 		<manifest file="${classes.dir}/META-INF/MANIFEST.MF">
 			<attribute name="Manifest-Version" value="1.0" />
-			<attribute name="FMLCorePlugin" value="EditableSigns.EditableSignsLoadingPlugin"/>  
+			<attribute name="FMLCorePlugin" value="EditableSigns.asm.EditableSignsLoadingPlugin"/>  
 		</manifest>
 	</target>
 	
