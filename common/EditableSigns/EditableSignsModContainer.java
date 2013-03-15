@@ -34,15 +34,14 @@ public class EditableSignsModContainer extends DummyModContainer {
 
 	public EditableSignsModContainer() {
 		super(new ModMetadata());
-		/* ModMetadata is the same as mcmod.info */
+
 		ModMetadata myMeta = super.getMetadata();
 		myMeta.authorList = Arrays.asList(new String[] { "Flow86" });
 		myMeta.description = "make signs editable";
 		myMeta.modId = "Editable-Signs";
 		myMeta.version = "@ES_VERSION@";
 		myMeta.name = "Editable Signs";
-		// myMeta.url =
-		// "http://minecraftforge.net/wiki/Using_Access_Transformers";
+		myMeta.url = "http://www.minecraftforum.net/index.php?app=forums&module=forums&section=findpost&pid=8436662";
 	}
 
 	public static void displayGUIEditSign(World world, int i, int j, int k, EntityPlayer entityplayer) {
