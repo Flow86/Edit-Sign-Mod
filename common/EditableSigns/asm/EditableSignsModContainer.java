@@ -10,15 +10,12 @@
  * granted by the copyright holder.
  */
 
-package EditableSigns;
+package EditableSigns.asm;
 
 import java.util.Arrays;
 import java.util.logging.Logger;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntitySign;
-import net.minecraft.world.World;
+import EditableSigns.BlockEditableSign;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
@@ -44,14 +41,6 @@ public class EditableSignsModContainer extends DummyModContainer {
 		myMeta.url = "http://www.minecraftforum.net/index.php?app=forums&module=forums&section=findpost&pid=8436662";
 	}
 
-	public static void displayGUIEditSign(World world, int i, int j, int k, EntityPlayer entityplayer) {
-		TileEntitySign tileentitysign = (TileEntitySign) world.getBlockTileEntity(i, j, k);
-		if (tileentitysign != null) {
-			// display GUI
-			entityplayer.displayGUIEditSign(tileentitysign);
-		}
-	}
-
 	@Override
 	public boolean registerBus(EventBus bus, LoadController controller) {
 		bus.register(this);
@@ -64,10 +53,6 @@ public class EditableSignsModContainer extends DummyModContainer {
 		esLog.info("Starting EditableSigns #@BUILD_NUMBER@ " + super.getMetadata().version + " (Built for Minecraft @MINECRAFT_VERSION@ with Forge @FORGE_VERSION@");
 		esLog.info("Copyright (c) Flow86, 2011-2013");
 
-		Block.blocksList[63] = null;
-		Block.signPost = (new BlockEditableSign(63, TileEntitySign.class, true)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
-
-		Block.blocksList[68] = null;
-		Block.signWall = (new BlockEditableSign(68, TileEntitySign.class, false)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
+		BlockEditableSign.initialize();
 	}
 }

@@ -10,7 +10,7 @@
  * granted by the copyright holder.
  */
 
-package EditableSigns;
+package EditableSigns.asm;
 
 import java.util.Map;
 
@@ -18,7 +18,7 @@ import cpw.mods.fml.relauncher.IFMLCallHook;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin.TransformerExclusions;
 
-@TransformerExclusions(value = { "EditableSigns" })
+@TransformerExclusions(value = { "EditableSigns.asm" })
 public class EditableSignsLoadingPlugin implements IFMLLoadingPlugin, IFMLCallHook {
 
 	@Override
@@ -28,17 +28,17 @@ public class EditableSignsLoadingPlugin implements IFMLLoadingPlugin, IFMLCallHo
 
 	@Override
 	public String[] getASMTransformerClass() {
-		return new String[] { "EditableSigns.EditableSignsAccessTransformer" };
+		return new String[] { "EditableSigns.asm.EditableSignsAccessTransformer" };
 	}
 
 	@Override
 	public String getModContainerClass() {
-		return "EditableSigns.EditableSignsModContainer";
+		return "EditableSigns.asm.EditableSignsModContainer";
 	}
 
 	@Override
 	public String getSetupClass() {
-		return "EditableSigns.EditableSignsLoadingPlugin";
+		return "EditableSigns.asm.EditableSignsLoadingPlugin";
 	}
 
 	@Override

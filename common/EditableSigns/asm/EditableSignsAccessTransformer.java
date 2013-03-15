@@ -10,7 +10,7 @@
  * granted by the copyright holder.
  */
 
-package EditableSigns;
+package EditableSigns.asm;
 
 import java.io.IOException;
 import java.lang.reflect.Method;

@@ -12,8 +12,10 @@
 
 package EditableSigns;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockSign;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.tileentity.TileEntitySign;
 import net.minecraft.world.World;
 
 /**
@@ -32,7 +34,19 @@ public class BlockEditableSign extends BlockSign {
 		if (entityplayer.isSneaking())
 			return super.onBlockActivated(worldObj, x, y, z, entityplayer, par6, par7, par8, par9);
 
-		EditableSignsModContainer.displayGUIEditSign(worldObj, x, y, z, entityplayer);
+		TileEntitySign tileentitysign = (TileEntitySign) worldObj.getBlockTileEntity(x, y, z);
+		if (tileentitysign != null) {
+			// display GUI
+			entityplayer.displayGUIEditSign(tileentitysign);
+		}
 		return true;
+	}
+
+	public static void initialize() {
+		Block.blocksList[63] = null;
+		Block.signPost = (new BlockEditableSign(63, TileEntitySign.class, true)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
+
+		Block.blocksList[68] = null;
+		Block.signWall = (new BlockEditableSign(68, TileEntitySign.class, false)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
 	}
 }
