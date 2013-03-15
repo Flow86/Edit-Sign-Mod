@@ -46,8 +46,12 @@
 
 ## Changelog:
 
+* 1.7
+   - Port for Minecraft 1.5
+
 * 1.6
-   - Port for 1.4.7 and MinecraftForge
+   - Port for Minecraft 1.4.7
+   - Now using Forge/FML
 
 * 1.5
    - you can avoid editing the sign while sneaking

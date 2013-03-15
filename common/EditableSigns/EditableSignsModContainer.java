@@ -65,9 +65,9 @@ public class EditableSignsModContainer extends DummyModContainer {
 		esLog.info("Copyright (c) Flow86, 2011-2013");
 
 		Block.blocksList[63] = null;
-		Block.signPost = (new BlockEditableSign(63, TileEntitySign.class, true)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setBlockName("sign").setRequiresSelfNotify();
+		Block.signPost = (new BlockEditableSign(63, TileEntitySign.class, true)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
 
 		Block.blocksList[68] = null;
-		Block.signWall = (new BlockEditableSign(68, TileEntitySign.class, false)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setBlockName("sign").setRequiresSelfNotify();
+		Block.signWall = (new BlockEditableSign(68, TileEntitySign.class, false)).setHardness(1.0F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("sign");
 	}
 }

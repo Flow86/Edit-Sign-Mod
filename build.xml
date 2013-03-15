@@ -1,7 +1,7 @@
 <project name="Editable-Signs" basedir="../" default="main">
 	<property environment="env" />
 
-	<property name="es.version"            value="1.6"/>
+	<property name="es.version"            value="1.7"/>
 	<property name="es.dir"                value="Edit-Sign-Mod"/>
 
 	<property name="build.dir" value="build"/>
@@ -15,8 +15,8 @@
 
 	<property name="mcpsrc.dir" value="${mcp.dir}/src"/>
 
-	<property name="mc.version" value="1.4.7"/>
-	<property name="forge.version" value="6.6.2.534"/>
+	<property name="mc.version" value="1.5"/>
+	<property name="forge.version" value="7.7.0.583"/>
 	
 	<property name="forge.name" value="minecraftforge-src-${mc.version}-${forge.version}.zip"/>
 
