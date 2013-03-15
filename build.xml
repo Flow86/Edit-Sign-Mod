@@ -16,7 +16,7 @@
 	<property name="mcpsrc.dir" value="${mcp.dir}/src"/>
 
 	<property name="mc.version" value="1.4.7"/>
-	<property name="forge.version" value="7.7.0.582"/>
+	<property name="forge.version" value="6.6.2.534"/>
 	
 	<property name="forge.name" value="minecraftforge-src-${mc.version}-${forge.version}.zip"/>
 
@@ -56,6 +56,13 @@
 
 		<unzip dest="${forge.dir}/.." src="${download.dir}/${forge.name}"/>
 
+		<echo message="Installing EditableSigns AccessTransformer Config"/>
+		<copy todir="${forge.dir}/accesstransformers">
+			<fileset dir="${es.dir}/common">
+				<include name="**/*.cfg"/>
+			</fileset>
+		</copy>		
+		
 		<!-- Fix executable permissions -->
 		<chmod dir="${forge.dir}" perm="ugo+rx" includes="**.sh"/>
 
@@ -96,7 +103,7 @@
 
 	<!-- Copy source for use in eclipse to debug -->
 	<target name="copy-src-eclipse">
-		<echo message="Installing ES source for Eclipse"/>
+		<echo message="Installing EditableSigns source for Eclipse"/>
 
 		<!-- Copy ES source -->
 		<copy todir="${mcpsrc.dir}/minecraft">
@@ -114,15 +121,15 @@
 
 	<!-- Copy source for packaging -->
 	<target name="copy-src">
-		<echo message="Installing ES source"/>
+		<echo message="Installing EditableSigns source"/>
 
-		<!-- Copy ABO source -->
+		<!-- Copy ES source -->
 		<copy todir="${mcpsrc.dir}/minecraft">
 			<fileset dir="${es.dir}/common">
 				<exclude name="**/*.bak"/>
 			</fileset>
 			<filterset>
-				<filter token="ABO_VERSION" value="${es.version}" />
+				<filter token="ES_VERSION" value="${es.version}" />
 				<filter token="BUILD_NUMBER" value="${build.number}" />
 				<filter token="MINECRAFT_VERSION" value="${mc.version}" />
 				<filter token="FORGE_VERSION" value="${forge.version}" />
@@ -130,9 +137,9 @@
 		</copy>
 	</target>
 	
-	<!-- compile abo -->
+	<!-- compile es -->
 	<target name="compile">
-		<echo message="Compiling ES"/>
+		<echo message="Compiling EditableSigns"/>
 
 		<!-- Recompile -->
 		<exec dir="${mcp.dir}" executable="cmd" osfamily="windows" failonerror="true">
@@ -180,17 +187,26 @@
 		<copy todir="${classes.dir}">
 			<fileset dir="${mcp.dir}/reobf/minecraft"/>
 		</copy>
+
+		<copy todir="${classes.dir}">
+			<fileset dir="${es.dir}/common">
+				<include name="**/*.cfg"/>
+			</fileset>
+		</copy>		
 		
-		<copy todir="${classes.dir}/META-INF">
-			<fileset dir="${es.dir}/common/META-INF"/>
-		</copy>
+		<mkdir dir="${classes.dir}/META-INF" />
+
+		<manifest file="${classes.dir}/META-INF/MANIFEST.MF">
+			<attribute name="Manifest-Version" value="1.0" />
+			<attribute name="FMLCorePlugin" value="EditableSigns.EditableSignsLoadingPlugin"/>  
+		</manifest>
 	</target>
 	
 	<!-- create es package -->
 	<target name="package">
 		<echo message="Creating JAR"/>
 		
-		<jar destfile="${jar.dir}/editable-signs-${es.version.full}.jar" basedir="${classes.dir}"/>
+		<jar manifest="${classes.dir}/META-INF/MANIFEST.MF"  destfile="${jar.dir}/editable-signs-${es.version.full}.jar" basedir="${classes.dir}"/>
 
 		<!-- Reset src dir to post-forge-install state -->
 		<delete dir="${mcpsrc.dir}/minecraft/EditableSigns"/>
