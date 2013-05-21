@@ -37,6 +37,7 @@ public class BlockEditableSign extends BlockSign {
 		TileEntitySign tileentitysign = (TileEntitySign) worldObj.getBlockTileEntity(x, y, z);
 		if (tileentitysign != null) {
 			// display GUI
+			tileentitysign.isEditable = true;
 			entityplayer.displayGUIEditSign(tileentitysign);
 		}
 		return true;
