@@ -46,6 +46,12 @@
 
 ## Changelog:
 
+* 1.7.2
+   - Port for Minecraft 1.6.2
+
+* 1.7.1
+   - Port for Minecraft 1.6.1
+
 * 1.7
    - Port for Minecraft 1.5
 
