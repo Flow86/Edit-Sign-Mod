@@ -52,6 +52,9 @@
 * 1.7.1
    - Port for Minecraft 1.6.1
 
+* 1.7@14
+   - fix smp "sign is not editable anymore"-bug
+
 * 1.7
    - Port for Minecraft 1.5
 
