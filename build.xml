@@ -15,8 +15,8 @@
 
 	<property name="mcpsrc.dir" value="${mcp.dir}/src"/>
 
-	<property name="mc.version" value="1.6.2"/>
-	<property name="forge.version" value="9.10.0.789"/>
+	<property name="mc.version" value="1.6.4"/>
+	<property name="forge.version" value="9.11.0.884"/>
 	
 	<property name="forge.name" value="minecraftforge-src-${mc.version}-${forge.version}.zip"/>
 
@@ -59,7 +59,7 @@
 		<echo message="Installing EditableSigns AccessTransformer Config"/>
 		<copy todir="${forge.dir}/accesstransformers">
 			<fileset dir="${es.dir}/common">
-				<include name="**/*.cfg"/>
+				<include name="**/*${mc.version}.cfg"/>
 			</fileset>
 		</copy>		
 		
@@ -111,8 +111,8 @@
 				<exclude name="**/*.bak"/>
 			</fileset>
 		</copy>
-		<copy todir="${mcp.dir}/jars/coremods">
-			<fileset dir="${es.dir}/coremods">
+		<copy todir="${mcp.dir}/jars/mods">
+			<fileset dir="${es.dir}/mods">
 				<exclude name="**/*.bak"/>
 			</fileset>
 		</copy>
@@ -210,7 +210,7 @@
 
 		<!-- Reset src dir to post-forge-install state -->
 		<delete dir="${mcpsrc.dir}/minecraft/EditableSigns"/>
-		<delete dir="${mcp.dir}/jars/coremods/EditableSigns_dummy.jar"/>
+		<delete dir="${mcp.dir}/jars/mods/EditableSigns_dummy.jar"/>
 	</target>
 	
 	<target name="main" depends="clean,setup,copy-src,compile,copy,package">

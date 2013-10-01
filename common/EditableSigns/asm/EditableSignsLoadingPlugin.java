@@ -14,13 +14,14 @@ package EditableSigns.asm;
 
 import java.util.Map;
 
+import cpw.mods.fml.relauncher.FMLInjectionData;
 import cpw.mods.fml.relauncher.IFMLCallHook;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
-import cpw.mods.fml.relauncher.IFMLLoadingPlugin.MCVersion;
+// import cpw.mods.fml.relauncher.IFMLLoadingPlugin.MCVersion;
 import cpw.mods.fml.relauncher.IFMLLoadingPlugin.TransformerExclusions;
 
 @TransformerExclusions(value = { "EditableSigns.asm" })
-@MCVersion(value = "@MINECRAFT_VERSION@")
+// @MCVersion(value = "@MINECRAFT_VERSION@")
 public class EditableSignsLoadingPlugin implements IFMLLoadingPlugin, IFMLCallHook {
 
 	@Override
@@ -49,7 +50,7 @@ public class EditableSignsLoadingPlugin implements IFMLLoadingPlugin, IFMLCallHo
 
 	@Override
 	public Void call() throws Exception {
-		EditableSignsAccessTransformer.addTransformerMap("editablesigns_at.cfg");
+		EditableSignsAccessTransformer.addTransformerMap("editablesigns_at_" + FMLInjectionData.data()[4]/* MCVersion */+ ".cfg");
 		return null;
 	}
 }
