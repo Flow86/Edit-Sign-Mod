@@ -68,11 +68,14 @@
 
 		<!-- Install forge -->
 		<exec dir="${forge.dir}" executable="cmd" osfamily="windows">
-			<arg line="/c install.cmd"/>
+			<arg line="/c"/>
+			<arg line="install.cmd"/>
+			<arg line="--no-assets"/>
 		</exec>
 
 		<exec dir="${forge.dir}" executable="sh" osfamily="unix">
 			<arg value="install.sh"/>
+			<arg value="--no-assets"/>
 		</exec>
 
 	</target>
